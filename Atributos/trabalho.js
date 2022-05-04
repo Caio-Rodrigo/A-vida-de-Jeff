@@ -1,8 +1,8 @@
 import promptSync from "prompt-sync";
-import { jeff, emprego, morreu } from "../main.js";
+import { jeff, emprego,} from "../main.js";
 const prompt = promptSync();
 
-function empregos(opcoes) {
+function empregos(opcoes, taVivo) {
     
     console.log(opcoes);
     console.log();
@@ -39,7 +39,7 @@ function empregos(opcoes) {
         console.log('Reconhecimento: ', + emprego.reconhecimento);
         return 
 
-    }else if (opcoes[escolha] ="[1] Trabalhar normalmente") {
+    }else if (opcoes[escolha] == "[1] Trabalhar normalmente") {
         
         emprego.experiencia++
         emprego.reconhecimento++
@@ -51,35 +51,35 @@ function empregos(opcoes) {
         console.log(`Experiencia: ${emprego.experiencia}`);     
         return   
 
-    }else /*if (opcoes[escolha] ="[2] jogar tempo fora")*/{
+    } else if (opcoes[escolha] ="[2] jogar tempo fora"){
         let sorte = 0
        console.log(opcoes[escolha]);
             console.log(sorte);
-        return
-        // if (sorte = 0) {
+        
+        if (sorte == 0) {
 
-        //     console.log('if');
+            console.log('if');
 
-        //     // console.log('Jeff não presta atenção e acaba sofrendo um acidente ...');
-        //     // prompt('Precione enter')
-        //     // console.clear()
-        //     // console.log('Jeff Morreu!!!');
-        //     // console.log();
-        //     // console.log('FIM DE JOGO');
-        //     // morreu = true
-        //     // return  
+            console.log('Jeff não presta atenção e acaba sofrendo um acidente ...');
+            prompt('Precione enter')
+            console.clear()
+            console.log('Jeff Morreu!!!');
+            console.log();
+            console.log('FIM DE JOGO');
+            taVivo = true
+            return  
 
-        // }else{
-        // // console.log('Jeff leva o trabalho na brincadeira');
-        // // emprego.reconhecimento--
-        // // jeff.fome = jeff.fome -10 
-        // // console.log(`Dinheiro: ${jeff.dinheiro}`);        
-        // // console.log(`Fome: ${jeff.fome}`);        
-        // // console.log(`Reconhecimento ${emprego.reconhecimento}`);        
-        // // console.log(`Experiencia: ${emprego.experiencia}`);
-        // // return
-        // console.log('else');
-        // }
+        }else{
+        console.log('Jeff leva o trabalho na brincadeira');
+        emprego.reconhecimento--
+        jeff.fome = jeff.fome -10 
+        console.log(`Dinheiro: ${jeff.dinheiro}`);        
+        console.log(`Fome: ${jeff.fome}`);        
+        console.log(`Reconhecimento ${emprego.reconhecimento}`);        
+        // console.log(`Experiencia: ${emprego.experiencia}`);
+        // return
+        console.log('else');
+        }
     }
 }
 

@@ -44,7 +44,7 @@ export let jeff = {
   Networking: 0,
   saude: 50,
 };
-export let morreu = false
+let morreu = false
 
 // Historia
 /*
@@ -93,7 +93,7 @@ Inicio: for (let i = 0; i < dia; i++) {
 
   console.log(morreu)
 
-  console.log(empregos(dedicacao));
+  console.log(empregos(dedicacao, morreu));
   if (morreu == true) {
     break;
   } else {
@@ -106,7 +106,7 @@ Inicio: for (let i = 0; i < dia; i++) {
 
   console.log(morreu)
 
-  console.log(empregos(dedicacao));
+  console.log(empregos(dedicacao,morreu));
   if (morreu == true) {
     break Inicio;
   } else {
