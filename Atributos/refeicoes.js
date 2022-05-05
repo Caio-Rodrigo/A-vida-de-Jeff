@@ -7,7 +7,10 @@ function cafeDaManha(listaDeCafe) {
     console.log(opcao);
   }
   let escolhacafe = +prompt();
-  // escolhacafe--;
+  while ((escolhacafe < 0 || escolhacafe > 2)||(isNaN(escolhacafe))) {
+    escolhacafe.log("escolha de 0 a 2 ");
+    escolha = +prompt()
+  }
   console.log();
 
   if (listaDeCafe[escolhacafe] == "[0]Pao") {
@@ -38,7 +41,10 @@ function almoco(listaDoAlmoco) {
     console.log(opcao);
   }
   let escolhaAlmoco = +prompt();
-  escolhaAlmoco--;
+  while ((escolhaAlmoco < 0 || escolhaAlmoco > 2)||(isNaN(escolhaAlmoco))) {
+    escolhaAlmoco.log("escolha de 0 a 2 ");
+    escolha = +prompt()
+  }
   console.log()
 
   if (listaDoAlmoco[escolhaAlmoco] == "[0]Salgado") {
@@ -75,7 +81,10 @@ function janta(listaJanta) {
     console.log(opcao);
   }
   let escolhaJanta = +prompt();
-  escolhaJanta--;
+  while ((escolhaJanta < 0 || escolhaJanta > 3)||(isNaN(escolhaJanta))) {
+    console.log("escolha de 0 a 3 ");
+    escolhaJanta = +prompt()
+  }
   console.log()
 
   if (listaJanta[escolhaJanta] == "[0]Salada") {

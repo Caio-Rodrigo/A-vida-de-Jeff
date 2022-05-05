@@ -8,6 +8,10 @@ export function tempoLivre(fazeres) {
   }
 
   let escolha = +prompt();
+  while ((escolha < 0 || escolha > 1)||(isNaN(escolha))) {
+    console.log("escolha de 0 a 1 ");
+    escolha = +prompt()
+  }
   console.log();
 
   jeff.estresse = jeff.estresse - 10;

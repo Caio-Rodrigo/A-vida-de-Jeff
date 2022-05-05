@@ -11,7 +11,10 @@ function empregos(opcoes) {
       }
 
       let escolha = +prompt();
-    //   escolha--;
+    while ((escolha < 0 || escolha > 2)||(isNaN(escolha))) {
+        console.log("escolha de 0 a 2 ");
+        escolha = +prompt()
+      }
       console.log();
       console.log(opcoes[escolha]);
 

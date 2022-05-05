@@ -8,6 +8,10 @@ function estudos(opcoes) {
   }
 
   let escolha = +prompt();
+  while ((escolha < 0 || escolha > 1)||(isNaN(escolha))) {
+    console.log("escolha de 0 a 1 ");
+    escolha = +prompt()
+  }
   //   escolha--;
   console.log();
   console.log(opcoes[escolha]);

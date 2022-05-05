@@ -2,9 +2,6 @@
 
 import { aFazeres } from "./Atributos/periodoDoDia.js";
 import { cafeDaManha, almoco, janta } from "./Atributos/refeicoes.js";
-// import { empregos } from "./Atributos/trabalho.js";
-// import { estudos } from "./Atributos/estudos.js";
-// import { tempoLivre } from "./Atributos/tempoLivre.js";
 
 import promptSync from "prompt-sync";
 
@@ -14,18 +11,6 @@ const prompt = promptSync();
 //  Ciclo
 let dia = 1;
 const periodo = ["Manha", "Tarde", "Noite"];
-
-// // Trabalho
-// const dedicacao = [
-//   "[0] Trabalhar empenhado",
-//   "[1] Trabalhar normalmente",
-//   "[2] jogar tempo fora",
-// ];
-// // Tempo Livre
-// const livre = ["[0]Academia", "[1]Parque"];
-
-// // Estudos
-// const estudo = ["[0]Dedicado", "[1]Troca de ideias"];
 
 const fazer = ["[0]Ir trabalhar", "[1]Ir estudar", "[2]Tirar um tempo livre"];
 
