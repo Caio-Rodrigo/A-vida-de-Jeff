@@ -2,6 +2,7 @@
 
 import { cafeDaManha, almoco, janta } from "./Atributos/refeicoes.js";
 import { empregos } from "./Atributos/trabalho.js";
+import { estudos } from "./Atributos/estudos.js";
 
 import promptSync from "prompt-sync";
 
@@ -11,6 +12,9 @@ const prompt = promptSync();
 //  Ciclo
 let dia = 1;
 
+// Estudos
+const estudo = ['[0]Dedicado', '[1]Troca de ideias']
+
 // Trabalho
 export let emprego = {
   trabalho: "Auxiliar",
@@ -18,10 +22,18 @@ export let emprego = {
   experiencia: 0,
   reconhecimento: 0,
 };
-const dedicacao = ["[0] Trabalhar empenhado", "[1] Trabalhar normalmente", "[2] jogar tempo fora"];
+const dedicacao = [
+  "[0] Trabalhar empenhado",
+  "[1] Trabalhar normalmente",
+  "[2] jogar tempo fora",
+];
 
 //Refeiçoes do dia
-const cafeDeManha = ["[0]Pao", "[1]Cafe reforçado", "[2]Ficar sem comer"];
+const cafeDeManha = [
+  "[0]Pao",
+  "[1]Cafe reforçado",
+  "[2]Ficar sem comer"
+];
 const almooco = [
   "[0]Salgado",
   "[1]Almoço completo",
@@ -43,8 +55,8 @@ export let jeff = {
   fome: 40,
   Networking: 0,
   saude: 50,
+  morreu: false,
 };
-let morreu = false
 
 // Historia
 /*
@@ -76,66 +88,52 @@ console.clear();
 */
 
 // Ciclo
-Inicio: for (let i = 0; i < dia; i++) {
+for (let i = 0; i < dia; i++) {
   console.log(`${dia}º Dia`);
   console.log();
 
   console.log("Manha");
   console.log();
   console.log("Jeff logo acorda oque ele come?");
-  // console.log(cafeDeManha);
-  // cafeManha = +prompt();
-  // cafeManha--;
-  // console.log(cafeDeManha[cafeManha]);
 
   console.log(cafeDaManha(cafeDeManha));
   console.log();
 
-  console.log(morreu)
-
-  console.log(empregos(dedicacao, morreu));
-  if (morreu == true) {
-    break;
-  } else {
-    console.log("Ta vivo");
-  }
-  console.log();
-
-  console.log(almoco(almooco));
-  console.log();
-
-  console.log(morreu)
-
-  console.log(empregos(dedicacao,morreu));
-  if (morreu == true) {
-    break Inicio;
-  } else {
-    console.log("Ta vivo");
-  }
-  console.log();
-
-  let parar = prompt();
-  if (parar == "s") {
-    break Inicio;
-  }
-
-  // console.log(janta(jantar));
-
-  // console.log(morreu)
+  console.log(estudos(estudo));
 
   // console.log(empregos(dedicacao));
-  // if (morreu == true) {
-  //   break Inicio;
-  // } else {
-  //   console.log("Ta vivo");
+  // if (jeff.morreu == true) {
+  //   break;
   // }
   // console.log();
 
-  // console.log(jeff);
+  // console.log(almoco(almooco));
+  // console.log();
+
+  // console.log(empregos(dedicacaoconsole.log(morreu)));
+  // if (jeff.morreu == true) {
+  //   break;
+  // }
+  // console.log();
+
+  let parar = prompt();
+  if (parar == "s") {
+    break;
+  }
+
+  console.log(janta(jantar));
+
+  console.log(empregos(dedicacao));
+  if (jeff.morreu == true) {
+    break;
+  }
+  console.log();
+
+  console.log(jeff);
   dia++;
 
   parar = prompt();
   if (parar == "ss") {
-    break Inicio;
+    break;
   }
 }

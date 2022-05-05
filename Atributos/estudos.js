@@ -1,10 +1,47 @@
 import promptSync from "prompt-sync";
-import { jeff, emprego } from "../main.js";
+import { jeff } from "../main.js";
 const prompt = promptSync();
 
+function estudos(opcoes) {
+  for (const escolha of opcoes) {
+    console.log(escolha);
+  }
 
-// function estudos() {
+  let escolha = +prompt();
+  //   escolha--;
+  console.log();
+  console.log(opcoes[escolha]);
 
-//     jeff.dinheiro = jeff.dinheiro - 
-    
-// }
+  jeff.conhecimento = jeff.conhecimento + 10;
+  jeff.dinheiro = jeff.dinheiro - 15;
+  jeff.estresse = jeff.estresse + 2;
+  jeff.fome = jeff.fome - 5;
+
+  if (opcoes[escolha] == "[0]Dedicado") {
+    console.log("Jeff se empenha nos estudos");
+
+    jeff.conhecimento = jeff.conhecimento + 10;
+    jeff.estresse = jeff.estresse + 3;
+    jeff.fome = jeff.fome - 6;
+
+    console.log(`Conhecimento: ${jeff.conhecimento}`);
+    console.log(`Dinheiro: ${jeff.dinheiro}`);        
+    console.log(`Extress ${jeff.estresse}`);        
+    console.log(`Fome: ${jeff.fome}`);        
+  } else if (opcoes[escolha] == "[1]Troca de ideias") {
+    console.log("Jeff troca conhecimentos com os professores");
+
+    jeff.conhecimento = jeff.conhecimento + 10;
+    jeff.estresse = jeff.estresse + 3;
+    jeff.fome = jeff.fome - 6;
+    jeff.Networking = jeff.Networking + 2;
+
+    console.log(`Conhecimento: ${jeff.conhecimento}`);
+    console.log(`Dinheiro: ${jeff.dinheiro}`);        
+    console.log(`Extress: ${jeff.estresse}`);        
+    console.log(`Fome: ${jeff.fome}`);     
+    console.log(`Networking: ${jeff.Networking}`);
+  }
+}
+
+export {estudos}

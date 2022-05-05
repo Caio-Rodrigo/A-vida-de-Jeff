@@ -2,21 +2,19 @@ import promptSync from "prompt-sync";
 import { jeff, emprego,} from "../main.js";
 const prompt = promptSync();
 
-function empregos(opcoes, taVivo) {
-    
-    console.log(opcoes);
-    console.log();
+function empregos(opcoes) {
 
-    for (const opcao of opcoes) {
-        console.log(opcao);
+    for (const esfoco of opcoes) {
+        console.log(esfoco);
       }
 
       let escolha = +prompt();
     //   escolha--;
       console.log();
+      console.log(opcoes[escolha]);
 
         jeff.dinheiro = jeff.dinheiro + emprego.salario
-        jeff.conhecimentoGeral++
+        jeff.conhecimento++
         jeff.estresse = jeff.estresse + 3
         jeff.fome = jeff.fome -5
         jeff.saude = jeff.saude -5
@@ -51,22 +49,25 @@ function empregos(opcoes, taVivo) {
         console.log(`Experiencia: ${emprego.experiencia}`);     
         return   
 
+        //a variavel jeff.morreu deve ser alterada somente se essa opção for selecionada
     } else if (opcoes[escolha] ="[2] jogar tempo fora"){
-        let sorte = 0
-       console.log(opcoes[escolha]);
-            console.log(sorte);
+        let sorte = Math.floor(Math.random() * 11);
         
-        if (sorte == 0) {
+
+        if (sorte == 5) {
 
             console.log('if');
 
             console.log('Jeff não presta atenção e acaba sofrendo um acidente ...');
             prompt('Precione enter')
             console.clear()
-            console.log('Jeff Morreu!!!');
+            console.log('Jeff jeff.morreu!!!');
             console.log();
             console.log('FIM DE JOGO');
-            taVivo = true
+
+            jeff.morreu = true
+            console.log(jeff.morreu);
+            //mude jeff.morreu para 
             return  
 
         }else{
@@ -76,9 +77,9 @@ function empregos(opcoes, taVivo) {
         console.log(`Dinheiro: ${jeff.dinheiro}`);        
         console.log(`Fome: ${jeff.fome}`);        
         console.log(`Reconhecimento ${emprego.reconhecimento}`);        
-        // console.log(`Experiencia: ${emprego.experiencia}`);
-        // return
-        console.log('else');
+        console.log(`Experiencia: ${emprego.experiencia}`);
+        return
+        
         }
     }
 }
