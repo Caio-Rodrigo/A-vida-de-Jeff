@@ -3,6 +3,7 @@
 import { cafeDaManha, almoco, janta } from "./Atributos/refeicoes.js";
 import { empregos } from "./Atributos/trabalho.js";
 import { estudos } from "./Atributos/estudos.js";
+import { tempoLivre } from "./Atributos/tempoLivre.js";
 
 import promptSync from "prompt-sync";
 
@@ -11,6 +12,9 @@ const prompt = promptSync();
 
 //  Ciclo
 let dia = 1;
+
+// Tempo Livre
+const livre = ['[0]Academia','[1]Parque']
 
 // Estudos
 const estudo = ['[0]Dedicado', '[1]Troca de ideias']
@@ -99,7 +103,7 @@ for (let i = 0; i < dia; i++) {
   console.log(cafeDaManha(cafeDeManha));
   console.log();
 
-  console.log(estudos(estudo));
+  // console.log(estudos(estudo));
 
   // console.log(empregos(dedicacao));
   // if (jeff.morreu == true) {
@@ -116,14 +120,16 @@ for (let i = 0; i < dia; i++) {
   // }
   // console.log();
 
+  console.log(tempoLivre(livre));
+
   let parar = prompt();
   if (parar == "s") {
     break;
   }
 
-  console.log(janta(jantar));
+  // console.log(janta(jantar));
 
-  console.log(empregos(dedicacao));
+  // console.log(empregos(dedicacao));
   if (jeff.morreu == true) {
     break;
   }
