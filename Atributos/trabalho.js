@@ -2,6 +2,8 @@ import promptSync from "prompt-sync";
 import { jeff, emprego,} from "../main.js";
 const prompt = promptSync();
 
+
+
 function empregos(opcoes) {
 
     for (const esfoco of opcoes) {

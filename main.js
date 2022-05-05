@@ -1,9 +1,10 @@
 /* Para utilizar a importaçao instalar package.json ustilisando (npm init)  e acrecentar dentro da package.json {"type": "module",} */
 
+import { aFazeres } from "./Atributos/periodoDoDia.js";
 import { cafeDaManha, almoco, janta } from "./Atributos/refeicoes.js";
-import { empregos } from "./Atributos/trabalho.js";
-import { estudos } from "./Atributos/estudos.js";
-import { tempoLivre } from "./Atributos/tempoLivre.js";
+// import { empregos } from "./Atributos/trabalho.js";
+// import { estudos } from "./Atributos/estudos.js";
+// import { tempoLivre } from "./Atributos/tempoLivre.js";
 
 import promptSync from "prompt-sync";
 
@@ -12,12 +13,21 @@ const prompt = promptSync();
 
 //  Ciclo
 let dia = 1;
+const periodo = ["Manha", "Tarde", "Noite"];
 
-// Tempo Livre
-const livre = ['[0]Academia','[1]Parque']
+// // Trabalho
+// const dedicacao = [
+//   "[0] Trabalhar empenhado",
+//   "[1] Trabalhar normalmente",
+//   "[2] jogar tempo fora",
+// ];
+// // Tempo Livre
+// const livre = ["[0]Academia", "[1]Parque"];
 
-// Estudos
-const estudo = ['[0]Dedicado', '[1]Troca de ideias']
+// // Estudos
+// const estudo = ["[0]Dedicado", "[1]Troca de ideias"];
+
+const fazer = ["[0]Ir trabalhar", "[1]Ir estudar", "[2]Tirar um tempo livre"];
 
 // Trabalho
 export let emprego = {
@@ -26,18 +36,9 @@ export let emprego = {
   experiencia: 0,
   reconhecimento: 0,
 };
-const dedicacao = [
-  "[0] Trabalhar empenhado",
-  "[1] Trabalhar normalmente",
-  "[2] jogar tempo fora",
-];
 
 //Refeiçoes do dia
-const cafeDeManha = [
-  "[0]Pao",
-  "[1]Cafe reforçado",
-  "[2]Ficar sem comer"
-];
+const cafeDeManha = ["[0]Pao", "[1]Cafe reforçado", "[2]Ficar sem comer"];
 const almooco = [
   "[0]Salgado",
   "[1]Almoço completo",
@@ -96,43 +97,42 @@ for (let i = 0; i < dia; i++) {
   console.log(`${dia}º Dia`);
   console.log();
 
-  console.log("Manha");
-  console.log();
-  console.log("Jeff logo acorda oque ele come?");
+  for (let i = 0; i < 3; i++) {
+    console.log(periodo[i]);
 
-  console.log(cafeDaManha(cafeDeManha));
-  console.log();
-
-  // console.log(estudos(estudo));
-
-  // console.log(empregos(dedicacao));
-  // if (jeff.morreu == true) {
-  //   break;
-  // }
-  // console.log();
-
-  // console.log(almoco(almooco));
-  // console.log();
-
-  // console.log(empregos(dedicacaoconsole.log(morreu)));
-  // if (jeff.morreu == true) {
-  //   break;
-  // }
-  // console.log();
-
-  console.log(tempoLivre(livre));
+    if (periodo[i] == "Manha") {
+      // Manha
+      console.log("ja é de manha Jeff toma café?");
+      console.log(cafeDaManha(cafeDeManha));
+      console.log();
+      console.log(aFazeres(fazer));
+      if (jeff.morreu == true) {
+        break;
+      }
+    } else if (periodo[i] == "Tarde") {
+      console.log("Esta na Hora do almoço oque vai almoça?");
+      console.log(almoco(almooco));
+      console.log();
+      console.log(aFazeres(fazer));
+      if (jeff.morreu == true) {
+        break;
+      }
+    } else if (periodo[i] == "Noite") {
+      console.log("Esta na Hora da Janta oque vai comer?");
+      console.log(janta(jantar));
+      console.log();
+      console.log(aFazeres(fazer));
+      if (jeff.morreu == true) {
+        break;
+      }
+    }
+  }
 
   let parar = prompt();
   if (parar == "s") {
     break;
   }
 
-  // console.log(janta(jantar));
-
-  // console.log(empregos(dedicacao));
-  if (jeff.morreu == true) {
-    break;
-  }
   console.log();
 
   console.log(jeff);
