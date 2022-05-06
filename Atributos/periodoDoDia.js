@@ -26,6 +26,10 @@ export function aFazeres(oQueFazer) {
     }
     console.log();
     let escolha = +prompt()
+    while ((escolha < 0 || escolha > 3)||(isNaN(escolha))) {
+        console.log("escolha de 0 a 3 ");
+        escolha = +prompt()
+      }
 
     if (oQueFazer[escolha] == "[0]Ir trabalhar") {
         console.log(empregos(dedicacao));
