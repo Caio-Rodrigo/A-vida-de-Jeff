@@ -1,10 +1,10 @@
 import promptSync from "prompt-sync";
-import { empregos } from "./trabalho.js";
-import { estudos } from "./estudos.js";
-import { tempoLivre } from "./tempoLivre.js";
-import { loteria } from "./sorte.js";
-import { subirCargo } from "./trabalhos.js";
-import { emprego } from "../main.js";
+import { empregos } from "../trabalho/trabalho.js";
+import { estudos } from "../Outros/estudos.js";
+import { tempoLivre } from "../Outros/tempoLivre.js";
+import { loteria } from "../Vida/sorte.js";
+import { subirCargo } from "../trabalho/trabalhos.js";
+import { emprego } from "../../main.js";
 const prompt = promptSync();
 
 // Trabalho

@@ -1,4 +1,4 @@
-import { emprego, jeff } from "../main.js";
+import { emprego, jeff } from "../../main.js";
 
 // function cargo(funcao) {
 //   if (funcao == "Auxiliar") {

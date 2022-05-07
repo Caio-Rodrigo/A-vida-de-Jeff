@@ -1,4 +1,4 @@
-import { jeff } from "../main.js";
+import { jeff } from "../../main.js";
 
 export function vida() {
   if (jeff.saude <= 0) {

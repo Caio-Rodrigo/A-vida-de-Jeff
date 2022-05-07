@@ -1,5 +1,5 @@
 import promptSync from "prompt-sync";
-import { jeff } from "../main.js";
+import { jeff } from "../../main.js";
 const prompt = promptSync();
 
 export function tempoLivre(fazeres) {

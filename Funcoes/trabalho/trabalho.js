@@ -1,5 +1,5 @@
 import promptSync from "prompt-sync";
-import { jeff, emprego } from "../main.js";
+import { jeff, emprego } from "../../main.js";
 
 const prompt = promptSync();
 

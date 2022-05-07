@@ -1,8 +1,8 @@
 /* Para utilizar a importaçao instalar package.json ustilisando (npm init)  e acrecentar dentro da package.json {"type": "module",} */
 
-import { aFazeres } from "./Funcoes/oqueFazer.js";
-import { cafeDaManha, almoco, janta } from "./Funcoes/refeicoes.js.js";
-import { vida } from "./Funcoes/saude.js";
+import { aFazeres } from "./Funcoes/Escolhas/oqueFazer.js";
+import { cafeDaManha, almoco, janta } from "./Funcoes/Vida/refeicoes.js";
+import { vida } from "./Funcoes/Vida/saude.js";
 import promptSync from "prompt-sync";
 
 console.clear();
@@ -11,9 +11,8 @@ const prompt = promptSync();
 //  Ciclo
 let dia = 1;
 const periodo = ["Manha", "Tarde", "Noite"];
-
 const fazer = ["[0]Ir trabalhar", "[1]Ir estudar", "[2]Tirar um tempo livre"];
-
+let jogarNovamente = "s";
 // Trabalho
 export let emprego = {
   trabalho: "Auxiliar",
@@ -48,8 +47,9 @@ export let jeff = {
   zerouVida: false,
 };
 
-// Historia
-/*
+while (jogarNovamente == "s") {
+  // Historia
+  /*
 console.log(
   "Por favor clique na seta ao lado do X do terminal para que ele se expanda e você tenha uma melhor experiencia !"
 );
@@ -77,61 +77,74 @@ prompt('-----Pressione "Enter para continuar"-----');
 console.clear();
 */
 
-// Ciclo
-GameOver: for (let i = 0; i < dia; i++) {
-  console.log(`${dia}º Dia`);
-  console.log();
+  // Ciclo
+  GameOver: for (let i = 0; i < dia; i++) {
+    console.log(`${dia}º Dia`);
+    console.log();
 
-  for (let i = 0; i < 3; i++) {
-    console.log(periodo[i]);
+    for (let i = 0; i < 3; i++) {
+      console.log(periodo[i]);
 
-    if (periodo[i] == "Manha") {
-      // Manha
-      console.log("ja é de manha Jeff toma café?");
-      console.log(cafeDaManha(cafeDeManha));
-      console.log();
+      if (periodo[i] == "Manha") {
+        // Manha
+        console.log("ja é de manha Jeff toma café?");
+        console.log(cafeDaManha(cafeDeManha));
+        console.log();
 
-      console.log(aFazeres(fazer));
-      console.log(vida());
-      if (jeff.zerouVida == true) {
-        break GameOver;
-      }
-    } else if (periodo[i] == "Tarde") {
-      console.log("Esta na Hora do almoço oque vai almoça?");
-      console.log(almoco(almooco));
-      console.log();
-      console.log(aFazeres(fazer));
-      console.log(vida());
-      if (jeff.zerouVida == true) {
-        break GameOver;
-      }
-    } else if (periodo[i] == "Noite") {
-      console.log("Esta na Hora da Janta oque vai comer?");
-      console.log(janta(jantar));
-      console.log();
-      console.log(aFazeres(fazer));
-      console.log(vida());
-      if (jeff.zerouVida == true) {
-        break GameOver;
+        console.log(aFazeres(fazer));
+        console.log(vida());
+        if (jeff.zerouVida == true) {
+          break GameOver;
+        }
+      } else if (periodo[i] == "Tarde") {
+        console.log("Esta na Hora do almoço oque vai almoça?");
+        console.log(almoco(almooco));
+        console.log();
+        console.log(aFazeres(fazer));
+        console.log(vida());
+        if (jeff.zerouVida == true) {
+          break GameOver;
+        }
+      } else if (periodo[i] == "Noite") {
+        console.log("Esta na Hora da Janta oque vai comer?");
+        console.log(janta(jantar));
+        console.log();
+        console.log(aFazeres(fazer));
+        console.log(vida());
+        if (jeff.zerouVida == true) {
+          break GameOver;
+        }
       }
     }
+
+    let parar = prompt();
+    if (parar == "s") {
+      break GameOver;
+    }
+
+    console.log();
+
+    console.log(jeff);
+    console.log();
+    console.log(emprego);
+    console.log();
+    dia++;
+
+    parar = prompt('PRESSIONE "S" PARA ENCERRAR O JOGO');
+    if (parar == "s") {
+      break;
+    }
+  }
+  let desejo = prompt(
+    "Deseja jogar novamente? s para SIM n para NAO"
+  ).toLowerCase();
+  while (desejo != "s" && desejo != "n") {
+    desejo = prompt('Apenas "S" ou "N"');
   }
 
-  let parar = prompt();
-  if (parar == "s") {
-    break GameOver;
-  }
-
-  console.log();
-
-  console.log(jeff);
-  console.log();
-  console.log(emprego);
-  console.log();
-  dia++;
-
-  parar = prompt('PRESSIONE "S" PARA ENCERRAR O JOGO');
-  if (parar == "s") {
+  if ((jogarNovamente = "s")) {
+    continue;
+  } else {
     break;
   }
 }
