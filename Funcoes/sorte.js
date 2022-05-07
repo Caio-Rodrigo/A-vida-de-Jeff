@@ -1,22 +1,9 @@
 import promptSync from "prompt-sync";
-import { jeff } from "./main";
+import { jeff } from "../main.js";
 const prompt = promptSync();
 
-// let escolha = +prompt();
-// while (escolha < 0 || escolha > 2 || isNaN(escolha)) {
-//   console.log("escolha de 0 a 2 ");
-//   escolha = +prompt();
-// }
-
-// const j = [1, 2, 3, 4];
-
-// for (const i of j) {
-//   console.log(i);
-// }
-
-
-function loteria() {
-  let aparecer = 2 /* Math.floor(Math.random() * 4);*/
+ function loteria() {
+  let aparecer = Math.floor(Math.random() * 4);
   INICIO: if (aparecer == 2) {
     console.log("Um vendedor aparece lhe oferecendo um bilhete da loteria");
     let resposta = prompt("Você compra?").toLowerCase();
@@ -26,11 +13,15 @@ function loteria() {
       resposta = prompt().toLowerCase();
     }
     if (resposta == 'sim') {
-        jeff.dinheiro = jeff.dinheiro -50
-        let sorte = Math.floor(Math.random() * 10);        
-        if (sorte == 5) {
+      jeff.dinheiro = jeff.dinheiro - 25;
+        let sorte = Math.floor(Math.random() * 100);        
+        if (sorte == 50) {
             console.log("PARABENS JEFF ACABA DE GANHAR NA LOTERIA!!");
-            jeff.dinheiro = jeff.dinheiro + 1000000000
+            prompt('Precione ENTER')
+            console.clear()
+            console.log("AGORA JEFF É UM CARA MILHONARIO E NÃO PRECISA MAIS DA SUA AJUDA");
+            console.log("TENHA UM BOM DIA E QUE VC TENHA A MESMA SORTE DE JEFF NA VIDA!!");
+            jeff.zerouVida = true
         } else  {
             console.log('QUE PENA NÃO FOI DESSA VEZ!!');
             console.log("TENTE UMA PROXIMA");
@@ -39,4 +30,6 @@ function loteria() {
     }
   }
 }
-console.log(loteria())     
+
+
+export {loteria}

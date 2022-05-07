@@ -16,7 +16,7 @@ function estudos(opcoes) {
   console.log();
   console.log(opcoes[escolha]);
 
-  jeff.conhecimento = jeff.conhecimento + 10;
+  jeff.conhecimento = jeff.conhecimento + 5;
   jeff.dinheiro = jeff.dinheiro - 15;
   jeff.estresse = jeff.estresse + 2;
   jeff.fome = jeff.fome - 5;
@@ -24,7 +24,7 @@ function estudos(opcoes) {
   if (opcoes[escolha] == "[0]Dedicado") {
     console.log("Jeff se empenha nos estudos");
 
-    jeff.conhecimento = jeff.conhecimento + 10;
+    jeff.conhecimento = jeff.conhecimento + 15;
     jeff.estresse = jeff.estresse + 3;
     jeff.fome = jeff.fome - 6;
 
@@ -35,7 +35,7 @@ function estudos(opcoes) {
   } else if (opcoes[escolha] == "[1]Troca de ideias") {
     console.log("Jeff troca conhecimentos com os professores");
 
-    jeff.conhecimento = jeff.conhecimento + 10;
+    jeff.conhecimento = jeff.conhecimento + 20;
     jeff.estresse = jeff.estresse + 3;
     jeff.fome = jeff.fome - 6;
     jeff.Networking = jeff.Networking + 2;
