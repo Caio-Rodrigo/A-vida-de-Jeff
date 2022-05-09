@@ -41,8 +41,8 @@ function almoco(listaDoAlmoco) {
     console.log(opcao);
   }
   let escolhaAlmoco = +prompt();
-  while ((escolhaAlmoco < 0 || escolhaAlmoco > 2)||(isNaN(escolhaAlmoco))) {
-    escolhaAlmoco.log("escolha de 0 a 2 ");
+  while ((escolhaAlmoco < 0 || escolhaAlmoco > 3)||(isNaN(escolhaAlmoco))) {
+    escolhaAlmoco.log("escolha de 0 a 3 ");
     escolha = +prompt()
   }
   console.log()

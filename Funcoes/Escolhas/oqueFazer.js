@@ -2,7 +2,6 @@ import promptSync from "prompt-sync";
 import { empregos } from "../trabalho/trabalho.js";
 import { estudos } from "../Outros/estudos.js";
 import { tempoLivre } from "../Outros/tempoLivre.js";
-import { loteria } from "../Vida/sorte.js";
 import { subirCargo } from "../trabalho/trabalhos.js";
 import { emprego } from "../../main.js";
 const prompt = promptSync();
@@ -37,14 +36,11 @@ export function aFazeres(oQueFazer) {
     console.log(emprego);
     console.log(empregos(dedicacao));
     console.log();
-    console.log(loteria());
   } else if (oQueFazer[escolha] == "[1]Ir estudar") {
     console.log(estudos(estudo));
     console.log();
-    console.log(loteria());
   } else if (oQueFazer[escolha] == "[2]Tirar um tempo livre") {
     console.log(tempoLivre(livre));
     console.log();
-    console.log(loteria());
   }
 }

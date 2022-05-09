@@ -3,6 +3,7 @@
 import { aFazeres } from "./Funcoes/Escolhas/oqueFazer.js";
 import { cafeDaManha, almoco, janta } from "./Funcoes/Vida/refeicoes.js";
 import { vida } from "./Funcoes/Vida/saude.js";
+import { loteria } from "./Funcoes/Vida/sorte.js";
 import promptSync from "prompt-sync";
 
 console.clear();
@@ -12,7 +13,7 @@ const prompt = promptSync();
 let dia = 1;
 const periodo = ["Manha", "Tarde", "Noite"];
 const fazer = ["[0]Ir trabalhar", "[1]Ir estudar", "[2]Tirar um tempo livre"];
-let jogarNovamente = "s";
+let jogarNovamente = "";
 // Trabalho
 export let emprego = {
   trabalho: "Auxiliar",
@@ -47,7 +48,7 @@ export let jeff = {
   zerouVida: false,
 };
 
-while (jogarNovamente == "s") {
+Encerrar: while (jogarNovamente != "n") {
   // Historia
   /*
 console.log(
@@ -96,6 +97,10 @@ console.clear();
         if (jeff.zerouVida == true) {
           break GameOver;
         }
+        console.log(loteria());
+        if (jeff.zerouVida == true) {
+          break GameOver;
+        }
       } else if (periodo[i] == "Tarde") {
         console.log("Esta na Hora do almoço oque vai almoça?");
         console.log(almoco(almooco));
@@ -105,12 +110,20 @@ console.clear();
         if (jeff.zerouVida == true) {
           break GameOver;
         }
+        console.log(loteria());
+        if (jeff.zerouVida == true) {
+          break GameOver;
+        }
       } else if (periodo[i] == "Noite") {
         console.log("Esta na Hora da Janta oque vai comer?");
         console.log(janta(jantar));
         console.log();
         console.log(aFazeres(fazer));
         console.log(vida());
+        if (jeff.zerouVida == true) {
+          break GameOver;
+        }
+        console.log(loteria());
         if (jeff.zerouVida == true) {
           break GameOver;
         }
@@ -135,16 +148,30 @@ console.clear();
       break;
     }
   }
-  let desejo = prompt(
-    "Deseja jogar novamente? s para SIM n para NAO"
-  ).toLowerCase();
-  while (desejo != "s" && desejo != "n") {
-    desejo = prompt('Apenas "S" ou "N"');
+  let jogarNovamente = prompt("Deseja jogar novamente? s para SIM n para NAO: ").toLowerCase();
+  while (jogarNovamente != "s" && jogarNovamente != "n") {
+    jogarNovamente = prompt('Apenas "S" ou "N"');
   }
 
-  if ((jogarNovamente = "s")) {
+  if ((jogarNovamente == "s")) {
+    dia = 1;
+    jeff = {
+      conhecimento: 0,
+      dinheiro: 100,
+      estresse: 0,
+      fome: 40,
+      Networking: 0,
+      saude: 50,
+      zerouVida: false,
+    };
+    emprego = {
+      trabalho: "Auxiliar",
+      salario: 10,
+      experiencia: 0,
+      reconhecimento: 0,
+    };
     continue;
   } else {
-    break;
+    break Encerrar ;
   }
 }
