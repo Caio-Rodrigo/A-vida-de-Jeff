@@ -1,5 +1,14 @@
 /* Para utilizar a importaçao instalar package.json ustilisando (npm init)  e acrecentar dentro da package.json {"type": "module",} */
 
+/*
+//////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////
+/////////   ATENÇÃO PARA O PROGRAMA FUNCIONAR CORRETAMENTE FAVOR  \\\\\\\\\\\\
+//////////////////    IMPORTAR TODO O DIRETORIO DO GIT    \\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+*/
+
 import { aFazeres } from "./Funcoes/Escolhas/oqueFazer.js";
 import { cafeDaManha, almoco, janta } from "./Funcoes/Vida/refeicoes.js";
 import { vida } from "./Funcoes/Vida/saude.js";
@@ -42,41 +51,40 @@ export let jeff = {
   conhecimento: 0,
   dinheiro: 100,
   estresse: 0,
-  fome: 40,
+  fome: 100,
   Networking: 0,
-  saude: 50,
+  saude: 70,
   zerouVida: false,
 };
 
 Encerrar: while (jogarNovamente != "n") {
   // Historia
-  /*
-console.log(
-  "Por favor clique na seta ao lado do X do terminal para que ele se expanda e você tenha uma melhor experiencia !"
-);
-prompt('-----Pressione "Enter para continuar"-----');
-console.clear();
 
-console.log("Olá seja Muito bem vindo a vida de Jeff!!");
-console.log();
-prompt('-----Pressione "Enter para continuar"-----');
-console.clear();
+  console.log(
+    "Por favor clique na seta ao lado do X do terminal para que ele se expanda e você tenha uma melhor experiencia !"
+  );
+  prompt('-----Pressione "Enter para continuar"-----');
+  console.clear();
 
-console.log("Jeff é um cara carismático e feliz");
-console.log();
-console.log(
-  "Seu proposito é manter Jeff vivo e bem , quem sabe até mesmo bem sucedido "
-);
-console.log();
-console.log(
-  "Jeff é um cara que trabalha em uma fabrica como ajudante geral, e estuda nas horas que lhe da na telha!"
-);
-console.log();
-console.log("Sem mais delongas um bom jogo !");
-console.log();
-prompt('-----Pressione "Enter para continuar"-----');
-console.clear();
-*/
+  console.log("Olá seja Muito bem vindo a vida de Jeff!!");
+  console.log();
+  prompt('-----Pressione "Enter para continuar"-----');
+  console.clear();
+
+  console.log("Jeff é um cara carismático e feliz");
+  console.log();
+  console.log(
+    "Seu proposito é manter Jeff vivo e bem , quem sabe até mesmo bem sucedido "
+  );
+  console.log();
+  console.log(
+    "Jeff é um cara que trabalha em uma fabrica como ajudante geral, e estuda nas horas que lhe da na telha!"
+  );
+  console.log();
+  console.log("Sem mais delongas um bom jogo !");
+  console.log();
+  prompt('-----Pressione "Enter para continuar"-----');
+  console.clear();
 
   // Ciclo
   GameOver: for (let i = 0; i < dia; i++) {
@@ -130,11 +138,6 @@ console.clear();
       }
     }
 
-    let parar = prompt();
-    if (parar == "s") {
-      break GameOver;
-    }
-
     console.log();
 
     console.log(jeff);
@@ -142,26 +145,23 @@ console.clear();
     console.log(emprego);
     console.log();
     dia++;
-
-    parar = prompt('PRESSIONE "S" PARA ENCERRAR O JOGO');
-    if (parar == "s") {
-      break;
-    }
   }
-  let jogarNovamente = prompt("Deseja jogar novamente? s para SIM n para NAO: ").toLowerCase();
+  let jogarNovamente = prompt(
+    "Deseja jogar novamente? s para SIM n para NAO: "
+  ).toLowerCase();
   while (jogarNovamente != "s" && jogarNovamente != "n") {
     jogarNovamente = prompt('Apenas "S" ou "N"');
   }
 
-  if ((jogarNovamente == "s")) {
+  if (jogarNovamente == "s") {
     dia = 1;
     jeff = {
       conhecimento: 0,
       dinheiro: 100,
       estresse: 0,
-      fome: 40,
+      fome: 100,
       Networking: 0,
-      saude: 50,
+      saude: 70,
       zerouVida: false,
     };
     emprego = {
@@ -172,6 +172,6 @@ console.clear();
     };
     continue;
   } else {
-    break Encerrar ;
+    break Encerrar;
   }
 }
