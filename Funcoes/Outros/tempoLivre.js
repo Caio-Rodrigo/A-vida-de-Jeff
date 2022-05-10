@@ -46,7 +46,6 @@ export function tempoLivre(fazeres) {
     console.log("Ele decide ir fazr uma caminhada no parque");
 
     let sorte = Math.floor(Math.random() * 11);
-console.log(sorte);
     if (sorte >= 5) {
       jeff.estresse = jeff.estresse - 10;
       jeff.fome = jeff.fome - 2;

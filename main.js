@@ -100,12 +100,12 @@ Encerrar: while (jogarNovamente != "n") {
         console.log(cafeDaManha(cafeDeManha));
         console.log();
 
-        console.log(aFazeres(fazer));
-        console.log(vida());
+        aFazeres(fazer);
+        vida();
         if (jeff.zerouVida == true) {
           break GameOver;
         }
-        console.log(loteria());
+        loteria();
         if (jeff.zerouVida == true) {
           break GameOver;
         }
@@ -113,12 +113,12 @@ Encerrar: while (jogarNovamente != "n") {
         console.log("Esta na Hora do almoço oque vai almoça?");
         console.log(almoco(almooco));
         console.log();
-        console.log(aFazeres(fazer));
-        console.log(vida());
+        aFazeres(fazer);
+        vida();
         if (jeff.zerouVida == true) {
           break GameOver;
         }
-        console.log(loteria());
+        loteria();
         if (jeff.zerouVida == true) {
           break GameOver;
         }
@@ -126,12 +126,12 @@ Encerrar: while (jogarNovamente != "n") {
         console.log("Esta na Hora da Janta oque vai comer?");
         console.log(janta(jantar));
         console.log();
-        console.log(aFazeres(fazer));
-        console.log(vida());
+        aFazeres(fazer);
+        vida();
         if (jeff.zerouVida == true) {
           break GameOver;
         }
-        console.log(loteria());
+        loteria();
         if (jeff.zerouVida == true) {
           break GameOver;
         }

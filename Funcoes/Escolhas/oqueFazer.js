@@ -33,14 +33,16 @@ export function aFazeres(oQueFazer) {
 
   if (oQueFazer[escolha] == "[0]Ir trabalhar") {
     subirCargo(trabalhos);
+    console.log();
     console.log(emprego);
-    console.log(empregos(dedicacao));
+    console.log();
+    empregos(dedicacao);
     console.log();
   } else if (oQueFazer[escolha] == "[1]Ir estudar") {
-    console.log(estudos(estudo));
+    estudos(estudo);
     console.log();
   } else if (oQueFazer[escolha] == "[2]Tirar um tempo livre") {
-    console.log(tempoLivre(livre));
+    tempoLivre(livre);
     console.log();
   }
 }

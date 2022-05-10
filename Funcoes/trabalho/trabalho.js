@@ -27,7 +27,7 @@ function empregos(opcoes) {
     emprego.experiencia = emprego.experiencia + 3;
     emprego.reconhecimento = emprego.reconhecimento + 4;
     jeff.estresse = jeff.estresse + 8;
-    jeff.fome = -20;
+    jeff.fome = jeff.fome - 20;
     jeff.Networking++;
 
     console.log("Dinheiro: ", +jeff.dinheiro);
@@ -38,8 +38,6 @@ function empregos(opcoes) {
     console.log("Saude: ", +jeff.saude);
     console.log("Experiencia: ", +emprego.experiencia);
     console.log("Reconhecimento: ", +emprego.reconhecimento);
-    
-
 
     return;
   } else if (opcoes[escolha] == "[1] Trabalhar normalmente") {
@@ -51,8 +49,6 @@ function empregos(opcoes) {
     console.log(`Fome: ${jeff.fome}`);
     console.log(`Reconhecimento ${emprego.reconhecimento}`);
     console.log(`Experiencia: ${emprego.experiencia}`);
-    
-
 
     return;
 
@@ -83,8 +79,6 @@ function empregos(opcoes) {
       console.log(`Fome: ${jeff.fome}`);
       console.log(`Reconhecimento ${emprego.reconhecimento}`);
       console.log(`Experiencia: ${emprego.experiencia}`);
-      
-
 
       return;
     }
